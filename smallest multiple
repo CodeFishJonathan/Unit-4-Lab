@@ -1,0 +1,12 @@
+def multiplecheck(n, divisorlist):
+    for i in divisorlist:
+        if n % i!=0:
+            return False
+    return True
+
+divisors=[20,19,18,17,16,15,14,13,12,11]
+n=2520 #start search from 2520, since 2520 is already divisable by 1-10. 
+while multiplecheck(n, divisors)==False:
+    n+=2520 #non-multiples of 2520 would not be devisable by 1-10, so the number search begins fron finding 2520's products
+
+print(n)
