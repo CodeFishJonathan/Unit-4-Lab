@@ -1,0 +1,16 @@
+maxproduct=0
+for i in range(999,100,-1): #upperlimit
+    for p in range(i,100,-1): #lowerlimit
+        product=i*p
+        n=product
+        reversecheck=0
+        if (product<maxproduct):
+            break
+        while (n!=0): #check if product is palindrome
+            reversecheck=reversecheck*10+n%10
+            n=n//10
+            
+        if (product==reversecheck and product>maxproduct): #check if product is the largest palindromic
+            maxproduct=product
+
+print(maxproduct)
