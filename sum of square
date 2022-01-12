@@ -1,0 +1,13 @@
+#sum of square
+
+squaresum=0
+for n in range(1, 101):
+    squaresum+=n**2
+
+#square of sum
+sum=0
+for n in range(1,101):
+    sum+=n
+sumsquare=sum**2
+
+print(sumsquare-squaresum)
