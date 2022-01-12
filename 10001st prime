@@ -1,0 +1,28 @@
+from math import * 
+
+def primecheck(n):
+   #prime checker function, prime can only be divided by 1 and itself, smallest is 2
+    isprime=True
+    if (n<=1):
+        return False
+    for j in range(2, floor(sqrt(n)+1)): #composite num must have factor less than/equal to sqrt of number
+        if (n%j)==0:
+            isprime=False
+            break
+    return isprime
+
+def findnthprime(n):
+    '''finds the nth prime through indentation when chekced number is prime'''
+    if n==1:        
+        return 2
+    if n==2:
+        return 3
+    prime=3 #2 is only even number that is prime, so we start from 3
+    inc=2 #to increment up unti the nth prime number
+    while(inc<n):
+        prime+=2 #add by two while starting from 3 sieves out odd numbers
+        if primecheck(prime)==True: #for every time primecheck finds is True and finds a primenum, increments.
+            inc+=1
+    return prime
+
+print(findnthprime(10001))
