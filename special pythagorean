@@ -1,0 +1,9 @@
+from math import *
+for a in range(3,1000):
+    for b in range (a+1,1000):
+        squaredc=a**2+b**2
+        c=sqrt(squaredc)
+
+        if a+b+c==1000:
+            product=a*b*c
+            print(product)
