@@ -1,0 +1,20 @@
+
+from math import * 
+
+def primecheck(n):
+   #prime checker function, prime can only be divided by 1 and itself, smallest is 2
+    isprime=True
+    if (n<=1):
+        return False
+    for j in range(2, floor(sqrt(n)+1)): #composite num must have factor less than/equal to sqrt of number
+        if (n%j)==0:
+            isprime=False
+            break
+    return isprime
+
+sum=0
+for n in range(0, 2000000):
+    if primecheck(n)==True:
+        sum+=n
+
+print(sum)
